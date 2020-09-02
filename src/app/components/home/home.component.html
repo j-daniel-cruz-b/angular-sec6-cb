@@ -1,9 +1,10 @@
-<div class="card-columns">
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title that wraps to a new line</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        </div>
-    </div>
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <h3>ERROR</h3>
+    <p>
+        Algo salió mal :c
+    </p>
 </div>
+
+<app-tarjetas *ngIf="!loading" [accion]="accion" [items]="nuevasCanciones"></app-tarjetas>
